@@ -1,7 +1,7 @@
 # How Technology can answer healthcare main challenges (Capgemini)
-by Fares EMBOUZZA & Pierre TOURNEUR & Christian BONNAUD & Amine
+by Fares EMBOUZZA & Pierre TOURNEUR & Christian BONNAUD & Amin Mohamed MALLEK
 
-## Description of our project##
+## Description of our project
 
 The main goal of our application is to prevent the users of back pain and eye strain during their working time on a computer.
 
