@@ -2,6 +2,7 @@ package hackathon;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class ThreadPopUp extends Thread{
 	
@@ -51,9 +52,7 @@ public class ThreadPopUp extends Thread{
 				if(msg.compareTo("")!=0)
 				{
 					JFrame pop = new JFrame("POPUP");
-					pop.add(new JLabel(msg));
-					pop.setSize(200, 100);
-					pop.setVisible(true);
+					JOptionPane.showMessageDialog(pop, msg);
 				}
 				
 				Main.brightness.clear();
