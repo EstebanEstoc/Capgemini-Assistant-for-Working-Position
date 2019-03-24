@@ -34,10 +34,10 @@ public class Interface extends JFrame implements ActionListener{
 	static ImageJpanel imageJpanel = new ImageJpanel();
 	static JLabel labelStatus;
     private TakePictureThread thread;
+	private StartTimeUp threadTimeUp;
 	static int imageID = 0;
-	
-	private boolean positionTaken = false;
-	
+	static int timeUp = 0;
+	private boolean positionTaken = false;	
 	
 	public Interface()
 	{
@@ -83,6 +83,12 @@ public class Interface extends JFrame implements ActionListener{
 			thread = new TakePictureThread(webcam);
 			thread.start();
 		}
+
+		if(threadTimeUp == null || !threadTimeUp.isAlive())
+      	{
+      		threadTimeUp = new StartTimeUp(10, webcam);
+      		threadTimeUp.start();
+      	}
         
         
 		this.setVisible(true);
