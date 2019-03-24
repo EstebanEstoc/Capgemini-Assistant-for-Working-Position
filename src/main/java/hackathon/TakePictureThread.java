@@ -77,6 +77,9 @@ public class TakePictureThread extends Thread{
 						posture = ret.split(";")[0].compareTo("True") == 0;
 						distance = ret.split(";")[1].compareTo("True") == 0;
 						brightness = ret.split(";")[2].compareTo("True") == 0;
+						Main.posture.add(posture);
+						Main.distance.add(distance);
+						Main.brightness.add(brightness);
 					}
 					
 					

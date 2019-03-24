@@ -100,6 +100,8 @@ public class Interface extends JFrame implements ActionListener{
 			if(e.getSource().equals(start))
 			{
 				thread.setTakes(true);
+				ThreadPopUp thread = new ThreadPopUp();
+				thread.start();
 			}
 			if(e.getSource().equals(closeWebcam))
 			{
