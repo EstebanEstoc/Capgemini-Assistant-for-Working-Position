@@ -1,11 +1,11 @@
 # How Technology can answer healthcare main challenges - Capgemini
-by Fares EMBOUZZA & Pierre TOURNEUR & Christian BONNAUD & Mohamed Amin MALLEK and with the support of Esteban ESTOC
+by Fares EMBOUZZA & Pierre TOURNEUR & Christian BONNAUD & Mohamed Amin MALLEK & Esteban ESTOC
 
 ## Description of our project
 
-The main goal of our application is to prevent the users of back pain and eye strain during their working time on a computer.
+The main goal of the application is to prevent the users of back pain and eye strain during their working time on a computer.
 
-We have made a desktop application with further features : 
+The desktop application has those further features : 
   - Initialisation of the good posture
   - Detection in real time if we move to a worst posture for our back
   - Detection of the  distance between eyes and screen
