@@ -1,4 +1,4 @@
-# How Technology can answer healthcare main challenges (Capgemini)
+# How Technology can answer healthcare main challenges - Capgemini
 by Fares EMBOUZZA & Pierre TOURNEUR & Christian BONNAUD & Amin Mohamed MALLEK
 
 ## Description of our project
