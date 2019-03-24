@@ -63,7 +63,7 @@ def detectvisage(path,detector,predictor):
                                         i = i+1
                                 i = i+1 
                                 cv2.circle(image, (x, y), 2, (0, 0, 255), -1)
-                        D = sqrt((X1-X2)**2 + (Y1-Y2)**2)
+                        D = sqrt((Y1-Y2)**2+(X1-X2)**2)
                         cv2.imwrite(path, image)
                         return(int(x11),int(y11),int(x19),int(y19),int(x17),int(y17),float(D))
                         
