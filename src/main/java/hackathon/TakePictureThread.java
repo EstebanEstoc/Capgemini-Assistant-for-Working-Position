@@ -77,6 +77,10 @@ public class TakePictureThread extends Thread{
 						posture = ret.split(";")[0].compareTo("True") == 0;
 						distance = ret.split(";")[1].compareTo("True") == 0;
 						brightness = ret.split(";")[2].compareTo("True") == 0;
+						
+						
+						
+						
 						Main.posture.add(posture);
 						Main.distance.add(distance);
 						Main.brightness.add(brightness);
@@ -86,12 +90,12 @@ public class TakePictureThread extends Thread{
 					if(!posture) {
 						//JFrame f = new JFrame("Attention");
 						//f.setVisible(true);
-						icon = new ImageIcon("./assets/bad.png");
+						icon = new ImageIcon("./assets/badPosture.jpg");
 					}else
-						icon = new ImageIcon("./assets/good.png");
+						icon = new ImageIcon("./assets/goodT.png");
 					
 					imageIcon = new ImageIcon(icon.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-					Interface.labelStatus.setIcon(imageIcon);
+					Interface.labelStatusPosture.setIcon(imageIcon);
 					temp = ImageIO.read(new File(path));
 					file.delete();
 				}

@@ -13,7 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Label;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +34,9 @@ public class Interface extends JFrame implements ActionListener{
 	private JButton setPosition = new JButton("Take position");
 	private Webcam webcam = Webcam.getDefault();
 	static ImageJpanel imageJpanel = new ImageJpanel();
-	static JLabel labelStatus;
+	static JLabel labelStatusPosture;
+	static JLabel labelStatusDistance;
+	static JLabel labelStatusBrightness;
     private TakePictureThread thread;
 	private StartTimeUp threadTimeUp;
 	static int imageID = 0;
@@ -72,10 +76,27 @@ public class Interface extends JFrame implements ActionListener{
 		webcam.setViewSize(new Dimension(640, 480));
 		webcam.open();
 		
-		ImageIcon icon = new ImageIcon("./assets/good.png");
-		ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-		labelStatus = new JLabel(imageIcon);
-        container.add(labelStatus,BorderLayout.EAST);
+		ImageIcon icon = new ImageIcon("./assets/goodT.png");
+		ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+		labelStatusPosture = new JLabel(imageIcon);
+		
+		ImageIcon icon2 = new ImageIcon("./assets/goodT.png");
+		ImageIcon imageIcon2 = new ImageIcon(icon2.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+		labelStatusDistance = new JLabel(imageIcon2);
+		
+		ImageIcon icon3 = new ImageIcon("./assets/badPosture.jpg");
+		ImageIcon imageIcon3 = new ImageIcon(icon3.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+		labelStatusBrightness = new JLabel(imageIcon3);
+		
+		JPanel statusPanel = new JPanel();
+		statusPanel.setLayout(new GridLayout(3, 0));
+		
+		
+		statusPanel.add(labelStatusPosture);
+		statusPanel.add(new JLabel(imageIcon2));
+		statusPanel.add(new JLabel(imageIcon3));
+		
+        container.add(statusPanel,BorderLayout.EAST);
 		
         
         if(thread == null || !thread.isAlive())

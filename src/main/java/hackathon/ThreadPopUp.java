@@ -30,27 +30,24 @@ public class ThreadPopUp extends Thread{
 			
 			for(int i = 0 ; i<Main.posture.size();i++)
 			{
-				System.out.println(Main.distance.get(i));
 				nbP += Main.posture.get(i)?0:1;
 				nbD += Main.distance.get(i)?0:1;
 				nbB += Main.brightness.get(i)?0:1;
 			}
 			String msg = "";
-			System.out.println(nbP + " "+ nbD+ " "+nbB);
-			System.out.println(nbP/Main.posture.size() + " "+ nbD/Main.posture.size()+ " "+nbB/Main.posture.size());
 			
 			
 			if(Main.posture.size()>0) {
 				
-				if(nbP/Main.posture.size()>0.3)
+				if(nbP/Main.posture.size()>0.5)
 				{
 					msg+= "Attention vous êtes mal positionné\n";
 				}
-				if(nbD/Main.distance.size()>0.3)
+				if(nbD/Main.distance.size()>0.5)
 				{
 					msg+= "Attention vous êtes trop près de l'écran\n";
 				}
-				if(nbB/Main.brightness.size()>0.3)
+				if(nbB/Main.brightness.size()>0.5)
 				{
 					msg+= "Attention vous êtes dans un endroit sombre, pensez à baisser votre luminosité\n";
 				}
