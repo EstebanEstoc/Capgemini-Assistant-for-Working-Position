@@ -12,6 +12,7 @@ import sun.audio.*;
 public class ThreadPopUp extends Thread{
 	
 	
+	static boolean brightness = false; 
 	
 	
 	public void run() {

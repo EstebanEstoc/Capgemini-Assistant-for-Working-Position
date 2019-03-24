@@ -77,53 +77,51 @@ public class Interface extends JFrame implements ActionListener{
 		webcam.setViewSize(new Dimension(640, 480));
 		webcam.open();
 		
-		ImageIcon icon = new ImageIcon("./assets/goodT.png");
+		ImageIcon icon = new ImageIcon("./assets/posturegood.png");
 		ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 		labelStatusPosture = new JLabel(imageIcon);
 		
-		ImageIcon icon2 = new ImageIcon("./assets/goodT.png");
+		ImageIcon icon2 = new ImageIcon("./assets/screendistancdgood.png");
 		ImageIcon imageIcon2 = new ImageIcon(icon2.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 		labelStatusDistance = new JLabel(imageIcon2);
 		
-		ImageIcon icon3 = new ImageIcon("./assets/goodT.png");
+		ImageIcon icon3 = new ImageIcon("./assets/luminoqstygood.png");
 		ImageIcon imageIcon3 = new ImageIcon(icon3.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
-		labelStatusBrightness = new JLabel();
+		labelStatusBrightness = new JLabel(imageIcon3);
 		
 		JPanel statusPanel = new JPanel();
-		statusPanel.setLayout(new GridLayout(6, 0));
-		
+		GridLayout gridLayout = new GridLayout(3,0);
+	
+		statusPanel.setLayout(gridLayout);
 		
 		statusPanel.add(labelStatusPosture);
 		JLabel label = new JLabel("Posture");
 		label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-		statusPanel.add(label);
 		
 		
 		statusPanel.add(labelStatusDistance);
 		JLabel label2 = new JLabel("Posture");
 		label2.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-		statusPanel.add(label2);
 		
 		statusPanel.add(labelStatusBrightness);
 		JLabel label3 = new JLabel("Posture");
 		label3.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-		statusPanel.add(label3);
 		
 		container.add(statusPanel,BorderLayout.EAST);
 		
         
         if(thread == null || !thread.isAlive())
 		{
-			thread = new TakePictureThread(webcam);
+			thread = new TakePictureThread(webcam,120);
 			thread.start();
 		}
-
+/*
 		if(threadTimeUp == null || !threadTimeUp.isAlive())
       	{
       		threadTimeUp = new StartTimeUp(10, webcam);
       		threadTimeUp.start();
       	}
-        
+  */      
         
 		this.setVisible(true);
         

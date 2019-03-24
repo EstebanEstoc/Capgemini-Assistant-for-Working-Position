@@ -16,6 +16,9 @@ public class StartTimeUp extends Thread{
 	static private int compteur = 0;
 	private int threshold;
 	
+	static int ImageCount = 0;
+	
+	
 	public StartTimeUp(int threshold, Webcam webcam)
 	{
 		super();
@@ -51,7 +54,7 @@ public class StartTimeUp extends Thread{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String path = "./pictures/"+(Interface.imageID++)+".png";
+			String path = "./temp/_"+(StartTimeUp.ImageCount++)+".png";
 			File file = new File(path);
 			if(temp!=null)
 				try {
@@ -67,8 +70,7 @@ public class StartTimeUp extends Thread{
 				System.out.println(in.readLine());
 
 				String ret = in.readLine();
-				System.out.println(ret);
-
+				
 				if ((ret != null) && (ret.compareTo("True") == 0))
 				{
 					System.out.println(ret);
@@ -81,6 +83,7 @@ public class StartTimeUp extends Thread{
 			
 			if (this.compteur > this.threshold)
 			{
+				file.delete();
 				System.out.println("trop longtemps");
 				return;
 			}
