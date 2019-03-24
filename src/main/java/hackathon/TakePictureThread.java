@@ -64,10 +64,10 @@ public class TakePictureThread extends Thread{
 						ImageIO.write(temp, "PNG", file);
 					
 					Process p = Runtime.getRuntime().exec("python3 traiter_image.py "+path);
-					
+
 					BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 					String ret = in.readLine();
-					
+					System.out.println(ret);
 					boolean posture = true;
 					boolean distance = true;
 					boolean brightness = true;

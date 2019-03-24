@@ -4,6 +4,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import sun.audio.*;
+
 public class ThreadPopUp extends Thread{
 	
 	
@@ -51,8 +61,23 @@ public class ThreadPopUp extends Thread{
 				}
 				if(msg.compareTo("")!=0)
 				{
-					JFrame pop = new JFrame("POPUP");
-					JOptionPane.showMessageDialog(pop, msg);
+					
+					try {
+						// open the sound file as a Java input stream
+					    InputStream in = new FileInputStream("./src/main/resources/alerte.wav");
+
+					    // create an audiostream from the inputstream
+					    AudioStream audioStream = new AudioStream(in);
+
+					    // play the audio clip with the audioplayer class
+					    AudioPlayer.player.start(audioStream);
+				        JFrame pop = new JFrame("POPUP");
+						JOptionPane.showMessageDialog(pop, msg);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 				}
 				
 				Main.brightness.clear();
