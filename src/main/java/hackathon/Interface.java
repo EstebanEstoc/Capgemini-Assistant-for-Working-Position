@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -84,19 +85,31 @@ public class Interface extends JFrame implements ActionListener{
 		ImageIcon imageIcon2 = new ImageIcon(icon2.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 		labelStatusDistance = new JLabel(imageIcon2);
 		
-		ImageIcon icon3 = new ImageIcon("./assets/badPosture.jpg");
+		ImageIcon icon3 = new ImageIcon("./assets/goodT.png");
 		ImageIcon imageIcon3 = new ImageIcon(icon3.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
-		labelStatusBrightness = new JLabel(imageIcon3);
+		labelStatusBrightness = new JLabel();
 		
 		JPanel statusPanel = new JPanel();
-		statusPanel.setLayout(new GridLayout(3, 0));
+		statusPanel.setLayout(new GridLayout(6, 0));
 		
 		
 		statusPanel.add(labelStatusPosture);
-		statusPanel.add(new JLabel(imageIcon2));
-		statusPanel.add(new JLabel(imageIcon3));
+		JLabel label = new JLabel("Posture");
+		label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+		statusPanel.add(label);
 		
-        container.add(statusPanel,BorderLayout.EAST);
+		
+		statusPanel.add(labelStatusDistance);
+		JLabel label2 = new JLabel("Posture");
+		label2.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+		statusPanel.add(label2);
+		
+		statusPanel.add(labelStatusBrightness);
+		JLabel label3 = new JLabel("Posture");
+		label3.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+		statusPanel.add(label3);
+		
+		container.add(statusPanel,BorderLayout.EAST);
 		
         
         if(thread == null || !thread.isAlive())

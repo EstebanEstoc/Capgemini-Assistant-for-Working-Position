@@ -45,8 +45,8 @@ public class TakePictureThread extends Thread{
 
 	public void run() {
 		
-		ImageIcon icon;
-		ImageIcon imageIcon;
+		ImageIcon icon,icon2,icon3;
+		ImageIcon imageIcon,imageIcon2,imageIcon3;
 		
 		while(true)
 		{
@@ -88,14 +88,30 @@ public class TakePictureThread extends Thread{
 					
 					
 					if(!posture) {
-						//JFrame f = new JFrame("Attention");
-						//f.setVisible(true);
-						icon = new ImageIcon("./assets/badPosture.jpg");
+						icon = new ImageIcon("./assets/badPos.png");
 					}else
 						icon = new ImageIcon("./assets/goodT.png");
 					
-					imageIcon = new ImageIcon(icon.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+					if(!distance) {
+						icon2 = new ImageIcon("./assets/badDis.png");
+					}else
+						icon2 = new ImageIcon("./assets/goodT.png");
+					
+					if(!brightness) {
+						icon3 = new ImageIcon("./assets/badB.jpg");
+					}else
+						icon3 = new ImageIcon("./assets/goodT.png");
+					
+					
+					imageIcon = new ImageIcon(icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 					Interface.labelStatusPosture.setIcon(imageIcon);
+					
+					imageIcon2 = new ImageIcon(icon2.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+					Interface.labelStatusDistance.setIcon(imageIcon2);
+					
+					imageIcon3 = new ImageIcon(icon3.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+					Interface.labelStatusBrightness.setIcon(imageIcon3);
+					
 					temp = ImageIO.read(new File(path));
 					file.delete();
 				}
